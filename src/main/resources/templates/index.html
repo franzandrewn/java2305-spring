@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Index page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Hello user!</h1>
+
+<p th:text="'login: ' + ${userInfo.login}" />
+<p th:text="'password: ' + ${userInfo.password}" />
+<a href="/auth">Log out</a>
+</body>
+</html>

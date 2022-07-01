@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title>Authorization</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Enter your login and password</h1>
+<div th:if="${not existsUser}" style="color:red">User does not exist</div>
+<div th:if="${existsUser} and not ${correctPassword}" style="color:red">Password is incorrect</div>
+<form action="#" th:action="@{/index}" th:object="${authForm}" method="post">
+  <p>Login: <input type="text" th:field="*{login}" /></p>
+  <p>Password: <input type="text" th:field="*{password}" /></p>
+  <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+</form>
+</body>
+</html>
